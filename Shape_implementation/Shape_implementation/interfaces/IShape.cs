@@ -9,5 +9,7 @@ namespace Shape_implementation.interfaces
     public interface IShape
     {
         void draw();
+       
     }
+    
 }

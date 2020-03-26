@@ -22,5 +22,6 @@ namespace Shape_implementation.abstract_class
         {
             _shape.draw();
         }
+        
     }
 }

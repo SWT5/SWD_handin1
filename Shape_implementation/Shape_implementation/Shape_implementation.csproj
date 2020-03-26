@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="abstract_decorator\ShapeDecorator.cs" />
+    <Compile Include="Decorators\BoldStyleDecorator.cs" />
     <Compile Include="shapes\Circle.cs" />
     <Compile Include="shapes\Rectangle.cs" />
     <Compile Include="Decorators\RedShapeDecorator.cs" />

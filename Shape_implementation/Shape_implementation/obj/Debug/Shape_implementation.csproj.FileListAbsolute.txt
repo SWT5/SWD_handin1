@@ -5,3 +5,9 @@ C:\Users\PC\Desktop\decorator_pattern\Shape_implementation\Shape_implementation\
 C:\Users\PC\Desktop\decorator_pattern\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\decorator_pattern\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.exe
 C:\Users\PC\Desktop\decorator_pattern\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.pdb
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\bin\Debug\Shape_implementation.exe.config
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\bin\Debug\Shape_implementation.exe
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\bin\Debug\Shape_implementation.pdb
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.csprojAssemblyReference.cache
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.exe
+C:\Users\samll\Source\Repos\SWD_handin1\Shape_implementation\Shape_implementation\obj\Debug\Shape_implementation.pdb

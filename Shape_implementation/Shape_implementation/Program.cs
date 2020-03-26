@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shape_implementation.abstract_class;
+using Shape_implementation.Decorators;
 using Shape_implementation.implementation;
 using Shape_implementation.interfaces;
 
@@ -16,8 +17,11 @@ namespace Shape_implementation
             IShape circle = new Circle();
             IShape rectangle = new Rectangle();
 
-            IShape redRectangle = new RedShapeDecorator(new Rectangle());
-            IShape redCircle = new RedShapeDecorator(new Circle());
+            IShape redRectangle = new RedShapeDecorator(rectangle);
+            IShape redCircle = new RedShapeDecorator(circle);
+
+            IShape boldRedRectangle = new BoldStyleDecorator(redRectangle);
+            IShape boldRedCircle = new BoldStyleDecorator(redCircle);
 
             circle.draw();
             rectangle.draw();
@@ -30,7 +34,10 @@ namespace Shape_implementation
             redCircle.draw();
             Console.WriteLine("");
 
-
+            boldRedRectangle.draw();
+            Console.WriteLine("");
+            boldRedCircle.draw();
+            Console.WriteLine("");
 
         }
     }
