@@ -13,6 +13,10 @@ namespace Shape_implementation.implementation
         {
             Console.WriteLine("Shape: Circle");
         }
+        public void calcArea()
+        {
+
+        }
 
     }
 }

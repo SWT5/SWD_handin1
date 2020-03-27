@@ -13,6 +13,11 @@ namespace Shape_implementation.implementation
         {
             Console.WriteLine("Shape: Rectangle");
         }
-      
+        public void calcArea()
+        {
+
+        }
+
+
     }
 }
