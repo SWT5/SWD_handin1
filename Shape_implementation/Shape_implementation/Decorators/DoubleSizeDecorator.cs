@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 using Shape_implementation.abstract_class;
 using Shape_implementation.interfaces;
 
-
 namespace Shape_implementation.Decorators
 {
-    public class BoldStyleDecorator : ShapeDecorator
+    class DoubleSizeDecorator : ShapeDecorator
     {
         private IShape _shape;
-        public BoldStyleDecorator(IShape shape)
+        public DoubleSizeDecorator(IShape shape)
         {
             _shape = shape;
         }
@@ -21,23 +20,15 @@ namespace Shape_implementation.Decorators
         public override void draw()
         {
             _shape.draw();      //printing out the shape
-            lineStyle();
-        }
-
-        private void lineStyle()
-        {
-            Console.WriteLine("Border style: Bold");
+            
         }
 
         public override double CalcArea()
         {
-            double _area = 0.9*(_shape.CalcArea());
-            Console.WriteLine("Area with bold style: {0}", _area);
+            double _area = _shape.CalcArea()*2;
+            Console.WriteLine("Area size doubled: {0}", _area);
+
             return _area;
         }
-
-       
     }
-
 }
-

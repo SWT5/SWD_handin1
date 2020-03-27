@@ -10,15 +10,16 @@ namespace Shape_implementation.implementation
 {
     public class Circle : IShape
     {
-        public double area { get; set; }
+        public double Area { get; set; }
         public void draw()
         {
             Console.WriteLine("Shape: Circle");
         }
-        public void CalcArea()
+        public double CalcArea()
         {
-            area = 3.14 * Math.Pow(1, 2);
-            Console.WriteLine("Default area is: {0}", area);
+            Area = 3.14 * Math.Pow(1, 2);
+            Console.WriteLine("Default area is: {0}", Area);
+            return Area;
         }
 
     }

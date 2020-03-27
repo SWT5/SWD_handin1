@@ -8,8 +8,8 @@ namespace Shape_implementation.interfaces
 {
     public interface IShape
     {
-        double area { get; set; }
+        double Area { get; set; }
         void draw();
-        void CalcArea();
+        double CalcArea();
     }
 }

@@ -9,15 +9,17 @@ namespace Shape_implementation.implementation
 {
     public class Rectangle : IShape
     {
-        public double area { get; set; }
+        public double Area { get; set; }
         public void draw()
         {
             Console.WriteLine("Shape: Rectangle");
         }
-        public void CalcArea()
+        public double CalcArea()
         {
-            area = 2 * 2;
-            Console.WriteLine("Default area is: {0}", area);
+            Area = 2 * 2;
+            Console.WriteLine("Default area is: {0}", Area);
+            return Area;
         }
+
     }
 }
