@@ -24,7 +24,7 @@ namespace Shape_implementation.abstract_class
             _shape.draw();
         }
 
-        public void CalcArea()
+        public virtual void CalcArea()
         {
             _shape.CalcArea();
         }
