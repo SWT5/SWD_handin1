@@ -27,7 +27,6 @@ namespace Shape_implementation.Decorators
         {
             double _area = _shape.CalcArea()*2;
             Console.WriteLine("Area size doubled: {0}", _area);
-
             return _area;
         }
     }

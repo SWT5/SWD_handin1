@@ -30,8 +30,7 @@ namespace Shape_implementation.implementation
 
         public override double CalcArea()
         {
-            double _area = _shape.CalcArea();
-            return _area;
+            return _shape.CalcArea();
         }
     }
 }
