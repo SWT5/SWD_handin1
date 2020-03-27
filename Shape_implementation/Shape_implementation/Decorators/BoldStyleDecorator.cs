@@ -28,6 +28,12 @@ namespace Shape_implementation.Decorators
         {
             Console.WriteLine("Border style: Bold");
         }
+
+        private void CalcArea()
+        {
+            double _area = (_shape.area) * 0.9;
+            Console.WriteLine("Default area is: {0}", _area);
+        }
     }
 
 }

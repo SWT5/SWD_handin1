@@ -27,5 +27,10 @@ namespace Shape_implementation.implementation
         {
             Console.WriteLine("Border color: Red");
         }
+
+        private void CalcArea()
+        {
+            Console.WriteLine("Default area is: {0}", _shape.area);
+        }
     }
 }

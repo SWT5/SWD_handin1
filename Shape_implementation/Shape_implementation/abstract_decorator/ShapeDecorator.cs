@@ -12,6 +12,7 @@ namespace Shape_implementation.abstract_class
     public class ShapeDecorator : IShape
     {
         protected IShape _shape;
+        public double area { get; set; }
 
         public ShapeDecorator()
         {
@@ -22,6 +23,13 @@ namespace Shape_implementation.abstract_class
         {
             _shape.draw();
         }
+
+        public void CalcArea()
+        {
+            _shape.CalcArea();
+        }
+
+        
         
     }
 }

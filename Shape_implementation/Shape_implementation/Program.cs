@@ -33,13 +33,10 @@ namespace Shape_implementation
             {
                 if (_string == "R")
                 {
-                    
-                    _rectangle = new Rectangle();
                     _shapeType = 1;
                 }
                 else if (_string == "C")
                 {
-                    _circle = new Circle();
                     _shapeType = 2;
                 }
                 else
@@ -57,12 +54,14 @@ namespace Shape_implementation
                 _redRectangle = new RedShapeDecorator(_rectangle);
                 _colorAdded= true;
                 _redRectangle.draw();
+                _redRectangle.CalcArea();
             }
             else if (_string == "Y" && _shapeType == 2)
             {
                 _redCircle = new RedShapeDecorator(_circle);
                 _colorAdded= true;
                 _redCircle.draw();
+                _redCircle.CalcArea();
             }
             else
             {
@@ -70,11 +69,13 @@ namespace Shape_implementation
                 if (_shapeType == 1)
                 {
                     _rectangle.draw();
+                    _rectangle.CalcArea();
                     _colorAdded = false;
                 }
                 else
                 {
                     _circle.draw();
+                    _circle.CalcArea();
                     _colorAdded = false;
                 }
             }
@@ -87,11 +88,13 @@ namespace Shape_implementation
             {
                 _boldRedRectangle = new BoldStyleDecorator(_redRectangle);
                 _boldRedRectangle.draw();
+                _boldRedRectangle.CalcArea();
             }
             else if (_string == "Y" && _shapeType == 2 && _colorAdded == true)
             {
                 _boldRedCircle = new BoldStyleDecorator(_redCircle);
                 _boldRedCircle.draw();
+                _boldRedCircle.CalcArea();
             }
             else
             {
