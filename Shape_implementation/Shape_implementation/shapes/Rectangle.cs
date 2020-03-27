@@ -17,7 +17,7 @@ namespace Shape_implementation.implementation
         public double CalcArea()
         {
             Area = 2 * 2;
-            Console.WriteLine("Default area is: {0}", Area);
+           
             return Area;
         }
 

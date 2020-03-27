@@ -18,7 +18,6 @@ namespace Shape_implementation.implementation
         public double CalcArea()
         {
             Area = 3.14 * Math.Pow(1, 2);
-            Console.WriteLine("Default area is: {0}", Area);
             return Area;
         }
 

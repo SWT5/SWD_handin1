@@ -32,7 +32,6 @@ namespace Shape_implementation.Decorators
         public override double CalcArea()
         {
             double _area = 0.9*(_shape.CalcArea());
-            Console.WriteLine("Area with bold style: {0}", _area);
             return _area;
         }
 

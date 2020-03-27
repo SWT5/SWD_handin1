@@ -9,15 +9,10 @@ namespace Shape_implementation.abstract_class
 {
 
     //abstract class
-    public class ShapeDecorator : IShape
+    public abstract class ShapeDecorator : IShape
     {
         protected IShape _shape;
         public double Area { get; set; }
-
-        public ShapeDecorator()
-        {
-
-        }
 
         public virtual void draw()
         {

@@ -17,29 +17,30 @@ namespace Shape_implementation
             string _string;
             int _shapeType = 0;
             bool _boorderAdded = false;
-            bool _colorAdded = false; 
+            bool _colorAdded = false;
+            bool _bold = false;
             IShape _circle = new Circle();
             IShape _rectangle = new Rectangle();
             IShape _redRectangle = null; 
             IShape _redCircle = null;
             IShape _doubleArea = null;
-
             IShape _boldRectangle = null;
-            IShape _boldCircle = null; 
+            IShape _boldCircle = null;
+            IShape _doubleSize = null;
+
             Console.WriteLine("Do you wish to create a Circle or Rectangle");
             Console.WriteLine("Type 'C' for Circle and 'R' for Rectangle ");
             _string = Console.ReadLine();
            
+            ///WHICH shape
             do
             {
                 if (_string == "R")
                 {
-                    //_rectangle = new Rectangle();
                     _shapeType = 1;
                 }
                 else if (_string == "C")
                 {
-                    //_circle = new Circle();
                     _shapeType = 2;
                 }
                 else
@@ -49,6 +50,7 @@ namespace Shape_implementation
                 }
             } while (_string != "R" && _string != "C");
 
+            ///WISH RED BORDER OR NOT
             Console.WriteLine("");
             Console.WriteLine("Do you wish to add a red border to your shape");
             Console.WriteLine("Press 'Y' for yes or 'N' for no");
@@ -58,14 +60,14 @@ namespace Shape_implementation
                 _redRectangle = new RedShapeDecorator(_rectangle);
                 _colorAdded= true;
                 _redRectangle.draw();
-                _redRectangle.CalcArea();
+                Console.WriteLine("Default area is: {0}", _redRectangle.CalcArea());
             }
             else if (_string == "Y" && _shapeType == 2)
             {
                 _redCircle = new RedShapeDecorator(_circle);
                 _colorAdded= true;
                 _redCircle.draw();
-                _redCircle.CalcArea();
+                Console.WriteLine("Default area is: {0}", _redCircle.CalcArea());
             }
             else
             {
@@ -73,16 +75,19 @@ namespace Shape_implementation
                 if (_shapeType == 1)
                 {
                     _rectangle.draw();
-                    _rectangle.CalcArea();
+                    Console.WriteLine("Default area is: {0}", _rectangle.CalcArea());
                     _colorAdded = false;
                 }
                 else
                 {
                     _circle.draw();
-                    _circle.CalcArea();
+                    Console.WriteLine("Default area is: {0}", _circle.CalcArea());
                     _colorAdded = false;
                 }
             }
+
+
+            //WISH BOLD LINES OR NOT 
 
             Console.WriteLine("Do you wish to make lines bold");
             Console.WriteLine("Press 'Y' for yes or 'N' for no");
@@ -91,41 +96,77 @@ namespace Shape_implementation
             {
                 _boldRectangle = new BoldStyleDecorator(_redRectangle);
                 _boldRectangle.draw();
-                _boldRectangle.CalcArea();
+                _bold = true;
+                Console.WriteLine("Area with bold style: {0}", _boldRectangle.CalcArea());
+                
             }
             else if (_string == "Y" && _shapeType == 2 && _colorAdded == true)
             {
                 _boldCircle = new BoldStyleDecorator(_redCircle);
                 _boldCircle.draw();
-                _boldCircle.CalcArea();
+                _bold = true;
+                Console.WriteLine("Area with bold style: {0}", _boldCircle.CalcArea());
             }
             else if (_string == "Y" && _shapeType == 1 && _colorAdded == false)
             {
                 _boldRectangle = new BoldStyleDecorator(_rectangle);
                 _boldRectangle.draw();
-                _boldRectangle.CalcArea();
+                Console.WriteLine("Area with bold style: {0}", _boldRectangle.CalcArea());
+                _bold = true;
+
             }
             else if (_string == "Y" && _shapeType == 2 && _colorAdded == false)
             {
                 _boldCircle = new BoldStyleDecorator(_circle);
                 _boldCircle.draw();
-                _boldCircle.CalcArea();
+                Console.WriteLine("Area with bold style: {0}", _boldCircle.CalcArea());
+                _bold = true;
             }
             else
             {
+                _bold = false;
                 Console.WriteLine("No bold style added");
             }
 
-            //Console.WriteLine("Example of calling decorators in different orders");
-            //Console.WriteLine("");
-            //Console.WriteLine("Double the size before you add bord bold");
-
+            ///increase are by two
+            /// 
+            Console.WriteLine("");
+            Console.WriteLine("Do you wish to double the size Y/N");
+            _string = Console.ReadLine();
+            if (_string == "Y")
+            {
+                if (_shapeType == 1 && _bold == true )
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    _doubleSize = new DoubleSizeDecorator(_boldRectangle);
+                    Console.WriteLine("Area with bold style: {0}", _doubleSize.CalcArea());
+                }
+                else if (_shapeType == 2 && _bold == true)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    _doubleSize = new DoubleSizeDecorator(_boldCircle);
+                    Console.WriteLine("Area with bold style: {0}", _doubleSize.CalcArea());
+                }
+                else if (_shapeType == 1 && _colorAdded == false && _bold == false)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    _doubleSize = new DoubleSizeDecorator(_rectangle);
+                    Console.WriteLine("Area with bold style: {0}", _doubleSize.CalcArea());
+                }
+                else
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    _doubleSize = new DoubleSizeDecorator(_circle);
+                    Console.WriteLine("Area with bold style: {0}", _doubleSize.CalcArea());
+                }
+            }
+            else
+                Console.WriteLine("Didn't increase size by two");
             
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("Double the size after adding bold style");
-           
-
 
         }
     }
