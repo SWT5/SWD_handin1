@@ -14,17 +14,23 @@ namespace Shape_implementation
     { 
     static void Main(string[] args)
         {
-            string _string;
-            int _shapeType = 0;
+            string _string;             // choice to make
+            int _shapeType = 0;         // shape choice
+            
             bool _boorderAdded = false;
             bool _colorAdded = false; 
+
             IShape _circle = new Circle();
             IShape _rectangle = new Rectangle();
+
             IShape _redRectangle = null; 
             IShape _redCircle = null;
 
             IShape _boldRedRectangle = null;
             IShape _boldRedCircle = null; 
+
+
+            /***      choosing rectangle or circle        ***/
             Console.WriteLine("Do you wish to create a Circle or Rectangle");
             Console.WriteLine("Type 'C' for Circle and 'R' for Rectangle ");
             _string = Console.ReadLine();
@@ -46,22 +52,24 @@ namespace Shape_implementation
                 }
             } while (_string != "R" && _string != "C");
 
+
+            /***      red border or not        ***/
             Console.WriteLine("Do you wish to add a red border to your shape");
             Console.WriteLine("Press 'Y' for yes or 'N' for no");
             _string = Console.ReadLine();
-            if (_string == "Y" && _shapeType == 1)
+            if (_string == "Y" && _shapeType == 1)  //rectangle
             {
                 _redRectangle = new RedShapeDecorator(_rectangle);
                 _colorAdded= true;
                 _redRectangle.draw();
                 _redRectangle.CalcArea();
             }
-            else if (_string == "Y" && _shapeType == 2)
+            else if (_string == "Y" && _shapeType == 2) //circle
             {
                 _redCircle = new RedShapeDecorator(_circle);
                 _colorAdded= true;
                 _redCircle.draw();
-                _redCircle.CalcArea();
+                //_redCircle.CalcArea();
             }
             else
             {
@@ -80,7 +88,7 @@ namespace Shape_implementation
                 }
             }
 
-            //do nothing 
+            // bold lines
             Console.WriteLine("Do you wish to make lines bold");
             Console.WriteLine("Press 'Y' for yes or 'N' for no");
             _string = Console.ReadLine();
@@ -94,7 +102,7 @@ namespace Shape_implementation
             {
                 _boldRedCircle = new BoldStyleDecorator(_redCircle);
                 _boldRedCircle.draw();
-                _boldRedCircle.CalcArea();
+                //_boldRedCircle.CalcArea();
             }
             else
             {
